@@ -8,6 +8,27 @@
 </head>
 <body>
     <header>Ejercicio 2</header>
-
+    <p>
+        A un  trabajador le descuentan de su sueldo el 10% si su sueldo es menor o
+        igual a 1000, por encima de 1000 y hasta 2000 el 5% del adicional, y por
+        encima de 2000 el 3% del adicional. Escribir un algoritmo que calcule el
+        descuento y sueldo neto que recibe el trabajador dado su sueldo.
+    </p>
+    <div>
+        <label>Sueldo:</label>
+        <input type="number" id="sueldo" name="sueldo_trabajador" value="0">
+        <button type="button" onclick="">Calcular</button>
+    </div>
+    <div>
+        <p>Sueldo Neto:</p>
+        <p id="total"></p>
+        <p>descuento:</p>
+        <p id="descuento"></p> 
+    </div>
+       
+   
 </body>
+<script>
+    var sueldo = parseFloat(document.getElementById('sueldo').value);
+</script>
 </html>
