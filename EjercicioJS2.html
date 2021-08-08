@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="/porcentaje.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio JS 2</title>
@@ -17,11 +18,11 @@
     <div>
         <label>Sueldo:</label>
         <input type="number" id="sueldo" name="sueldo_trabajador" value="0">
-        <button type="button" onclick="">Calcular</button>
+        <button type="button" onclick="totales();">Calcular</button>
     </div>
     <div>
         <p>Sueldo Neto:</p>
-        <p id="total"></p>
+        <p id="neto"></p>
         <p>descuento:</p>
         <p id="descuento"></p> 
     </div>
@@ -29,6 +30,29 @@
    
 </body>
 <script>
-    var sueldo = parseFloat(document.getElementById('sueldo').value);
+    function totales(){
+           var sueldo = parseFloat(document.getElementById('sueldo').value);
+           var descuento;
+           var neto;
+
+           if(sueldo<=1000){
+            //10%
+            descuento = porcentaje(sueldo,10);
+            neto = sueldo-descuento;
+           }else if(sueldo>1000 && sueldo<=2000){
+            //15%
+            descuento = porcentaje(sueldo,15);
+            neto = sueldo-descuento;
+           }else{
+            //18%
+            descuento = porcentaje(sueldo,18);
+            neto = sueldo-descuento;
+           }
+
+           document.getElementById("descuento").innerHTML=descuento;
+           document.getElementById("neto").innerHTML=neto;
+            
+    }
+ 
 </script>
 </html>
