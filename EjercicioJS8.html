@@ -15,5 +15,34 @@
         si la edad es de 19 a 25 años “joven” , si la edad es de 26 a 65 años 
         “ adulto” , si la edad es mayor de 65 “anciano”.
     </p>
+    <label>Cual es tu edad ?:</label>
+    <input type="number" id="edad" value="0">
+    <button type="button" onclick="edad();">Ok</button>
+    <div>
+        <p>Tu eres una persona:</p>
+        <p id="edadfinal"></p>   
+    </div>
 </body>
+<script>
+    function edad(){
+        var edad = parseInt(document.getElementById('edad').value);
+        var edadfinal;
+        if(edad>=0 && edad<=10){
+            edadfinal = 'niño';     
+        }else if(edad>=11 && edad<=14){
+            edadfinal = 'púber';
+        }else if(edad>=15 && edad<=18){
+            edadfinal = 'adolecente';
+        }else if(edad>=19 && edad<=25){
+            edadfinal = 'joven';
+        }else if(edad>=26 && edad<=65){
+            edadfinal = 'adulto';
+        }else if(edad>65){
+            edadfinal = 'anciano';   
+        }else{
+            edadfinal = 'no a nacido'; 
+        }
+        document.getElementById("edadfinal").innerHTML=edadfinal;
+    }
+</script>
 </html>
