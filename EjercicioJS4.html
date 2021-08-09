@@ -19,10 +19,8 @@
         <button type="button" onclick="minutos();">Calcular</button>
     </div>
     <div>
-        <p>Minutos:</p>
-        <p id="minutos"></p>
-        <p>Segundos:</p>
-        <p id="segundos"></p>
+        <p>Total:</p>
+        <p id="total"></p>
     </div>
 </body>
 <script>
@@ -32,8 +30,7 @@
         minutos = Math.floor(numero/60); 
         segundos = numero - (minutos*60);  
        
-        document.getElementById("minutos").innerHTML=minutos;
-        document.getElementById("segundos").innerHTML=segundos;
+        document.getElementById("total").innerHTML = minutos +' : '+ segundos;
     }
 </script>
 </html>
