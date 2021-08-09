@@ -28,7 +28,7 @@
         var dias,horas,minutos;
         dias = Math.floor ( (numero / 1440) ); 
         horas = Math.floor( ((numero - (dias*1440) ) / 60) ); 
-        minutos = Math.floor( ((numero - ((dias*(24*60)))) - (horas*60)) );  
+        minutos = Math.floor( ((numero - ((dias*1440))) - (horas*60)) );  
         document.getElementById("total").innerHTML =' D:'+ dias +' H:'+ horas +' M:'+ minutos;
     }
 </script>
