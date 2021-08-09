@@ -14,5 +14,35 @@
         unidades. El IVA es del 15% y si el precio neto ( precio venta mas IVA) es
         mayor de 50.00 pesos se debe realizar un descuento del 5%.
     </P>
+    <div>
+        <label>Precio:</label>
+        <input type="number" id="precio" value="0">
+        <label>N.Articulos:</label>
+        <input type="number" id="NumA" value="0">
+        <button type="button" onclick="total();">Calcular Total</button>
+    </div>
+    <div>
+        <p>Factura</p>
+        <p id="Importes"></p>
+         
+    </div>
 </body>
+<script>
+    function total() {
+       var precio = parseFloat(document.getElementById('precio').value);
+       var NumA = parseFloat(document.getElementById('NumA').value);
+       var iva=0,total=0,descuento=0;
+       var Pv;//Pv precio de venta
+       var Pn;//pb precio neto
+       Pv= precio*NumA;
+       iva = Pv * 0.15;
+       Pn= Pv+iva;
+       if(Pv>=50){
+           descuento=(Pn*5)/100;
+       }
+       total=Pn-descuento;
+       document.getElementById("Importes").innerHTML ='Precio de venta: $'+Pv+'<br/> iva: $'+ iva +'<br/> Precio neto: $'+ Pn + '<br/> Descuento: $'+descuento+'<br/> Total: $'+total;
+     
+    }
+</script>
 </html>
