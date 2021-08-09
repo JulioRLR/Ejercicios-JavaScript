@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="/porcentaje.js"></script>
@@ -7,12 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio JS4</title>
 </head>
+
 <body>
     <header>Ejercicio 4</header>
     <P>
-        Escribir   un   algoritmo   que   lea   una   cantidad   y   calcule   el   descuento
+        Escribir un algoritmo que lea una cantidad y calcule el descuento
         considerando que si la cantidad dada está por encima de 100 el descuento
-        es el 10% y si está por debajo de 100 el descuento es el 2%.   
+        es el 10% y si está por debajo de 100 el descuento es el 2%.
     </P>
+    <div>
+        <label>Cantidad:</label>
+        <input type="number" id="cantidad" value="0">
+        <button type="button" onclick="calcular();">Calcular</button>
+    </div>
+    <div>
+        <p>descuento:</p>
+        <p id="total"></p>
+    </div>
 </body>
+<script>
+    function calcular() {
+        var cantidad = parseFloat(document.getElementById('cantidad').value);
+        var descuento, total;
+        if(cantidad<100){
+            descuento = porcentaje(cantidad,2);
+            
+        }else{
+            descuento = porcentaje(cantidad,10);
+        }
+        total = cantidad-descuento;
+        document.getElementById("total").innerHTML=total;
+    }
+</script>
+
 </html>
