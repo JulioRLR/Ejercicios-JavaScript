@@ -7,6 +7,31 @@
     <title>EjercicioJS 6</title>
 </head>
 <body>
-    
+    <header>Ejercicio 6</header>
+    <P>
+        Escribir un algoritmo que lea las horas trabajadas de una persona y la
+        tarifa de pago para calcular su salario e imprimirlo.
+    </P>
+    <div>
+        <label>Horas:</label>
+        <input type="number" id="horas" value="0">
+        <label>Tarifa:</label>
+        <input type="number" id="salario" value="0">
+        <button type="button" onclick="salario();">Calcular salario</button>
+    </div>
+    <div>
+        <p>Salario total:</p>
+        <p id="Total"></p>   
+    </div>
 </body>
+<script>
+    function salario() {
+       var horas = parseFloat(document.getElementById('horas').value);
+       var tarifa = parseFloat(document.getElementById('salario').value);
+       var total;
+       total = horas*tarifa;
+       document.getElementById("Total").innerHTML=total;
+    }
+     
+ </script>
 </html>
