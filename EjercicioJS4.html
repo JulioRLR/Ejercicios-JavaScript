@@ -7,6 +7,33 @@
     <title>EjercicioJS 4</title>
 </head>
 <body>
-    
+    <header>Ejercicio 4</header>
+    <P>
+        Escribir un algoritmo que lea un tiempo en segundos y que calcule los
+        segundos restantes que le correspondan para convertirse exactamente en
+        minutos.
+    </P>
+    <div>
+        <label>Segundos:</label>
+        <input type="number" id="numero" value="0">
+        <button type="button" onclick="minutos();">Calcular</button>
+    </div>
+    <div>
+        <p>Minutos:</p>
+        <p id="minutos"></p>
+        <p>Segundos:</p>
+        <p id="segundos"></p>
+    </div>
 </body>
+<script>
+    function minutos(){
+        var numero = parseInt(document.getElementById('numero').value);
+        var minutos,segundos;
+        minutos = Math.floor(numero/60); 
+        segundos = numero - (minutos*60);  
+       
+        document.getElementById("minutos").innerHTML=minutos;
+        document.getElementById("segundos").innerHTML=segundos;
+    }
+</script>
 </html>
