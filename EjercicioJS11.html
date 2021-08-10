@@ -32,14 +32,15 @@
 </body>
 <script>
     function SueldoTotal() {
-        var comision, total;
+      
         var sueldo = parseFloat(document.getElementById('sueldo').value);
         var precio = parseFloat(document.getElementById('venta').value);
-        if (precio >= 5000 && precio < 1000) {
+          var comision, total;
+        if (precio >= 5000 && precio < 10000) {
             comision = porcentaje(precio, 5);
             total = sueldo + comision;
         }
-        else if (precio > 1000) {
+        else if (precio > 10000) {
             comision = porcentaje(precio, 15);
             total = sueldo + comision;
         }
