@@ -11,18 +11,53 @@
 <body>
     <header>EjerciciosJS 12</header>
     <p>
+
         Katthy organiza una fiesta en la cual una computadora controla el
         ingreso mediante 5 claves. Si se ingresa al menos una clave incorrecta la
         computadora imprimirá "TE EQUIVOCASTE DE FIESTA" y no permitirá el
         ingreso. Si las 5 claves son correctas imprimirá "BIENVENIDO A LA FIESTA".
         Escribir un algoritmo que realice lo anterior.
-        Las Claves son:
-        1: "TIENES"
-        2: "QUE SER"
-        3: "INVITADO"
-        4: "PARA"
-        5: "INGRESAR"
+        Las claves son:
     </p>
+    <ol>
+        <li>"TIENES"</li>
+        <li>"QUE SER"</li>
+        <li>"INVITADO"</li>
+        <li>"PARA"</li>
+        <li>"INGRESAR"</li>
+    </ol>
+
+    <label>clave:</label>
+    <input type="text" id="clave">
+    <button type="button" onclick="claves();">Ok</button>
+    <div>
+        <p id="texto"></p>
+    </div>
 </body>
+<script>
+    function claves() {
+        var clave = document.getElementById('clave').value;
+        switch (clave) {
+            case 'TIENES':
+                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+                break;
+            case 'QUE SER':
+                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+                break;
+            case 'INVITADO':
+                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+                break;
+            case 'PARA':
+                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+                break;
+            case 'INGRESAR':
+                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+                break;
+            default:
+                document.getElementById("texto").innerHTML = 'TE EQUIVOCASTE DE FIESTA';
+                break;
+        }
+    }
+</script>
 
 </html>
