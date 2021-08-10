@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <script src="/porcentaje.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios JS 11</title>
 </head>
+
 <body>
     <header>EjerciciosJS 11</header>
     <p>
-        Una  tienda  se  dedica  a  la  venta  de  computadoras,  cada  vendedor
+        Una tienda se dedica a la venta de computadoras, cada vendedor
         tiene un sueldo mensual pero además de su sueldo gana una comisión por
         venta: Si el monto de venta es mayor de 10,000 la comisión será del 15%.
         Si el monto de venta es mayor o igual a 5,000 y menor de 10,000 la
         comisión es del 5%. Si el monto de la venta es menor que 5,000 no tiene
-        comisión.   Escribir   un   algoritmo   que   calcule   el   sueldo   
-        total   de   cada vendedor.
+        comisión. Escribir un algoritmo que calcule el sueldo
+        total de cada vendedor.
     </p>
+    <label>Sueldo:</label>
+    <input type="number" id="sueldo" value="0">
+    <label>Monto de venta:</label>
+    <input type="number" id="venta" value="0">
+
+    <button type="button" onclick="SueldoTotal();">Ok</button>
+    <div>
+        <p id="total"></p>
+    </div>
 </body>
+<script>
+    function SueldoTotal() {
+        var comision, total;
+        var sueldo = parseFloat(document.getElementById('sueldo').value);
+        var precio = parseFloat(document.getElementById('venta').value);
+        if (precio >= 5000 && precio < 1000) {
+            comision = porcentaje(precio, 5);
+            total = sueldo + comision;
+        }
+        else if (precio > 1000) {
+            comision = porcentaje(precio, 15);
+            total = sueldo + comision;
+        }
+        else if (precio < 5000) {
+            total = sueldo;
+        }
+        document.getElementById("total").innerHTML = total;
+      
+    }
+</script>
+
 </html>
