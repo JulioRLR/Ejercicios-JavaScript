@@ -28,35 +28,30 @@
     </ol>
 
     <label>clave:</label>
-    <input type="text" id="clave">
+    <input type="text" id="clave1">
+    <input type="text" id="clave2">
+    <input type="text" id="clave3">
+    <input type="text" id="clave4">
+    <input type="text" id="clave5">
     <button type="button" onclick="claves();">Ok</button>
     <div>
         <p id="texto"></p>
     </div>
 </body>
 <script>
+
     function claves() {
-        var clave = document.getElementById('clave').value;
-        switch (clave) {
-            case 'TIENES':
-                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
-                break;
-            case 'QUE SER':
-                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
-                break;
-            case 'INVITADO':
-                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
-                break;
-            case 'PARA':
-                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
-                break;
-            case 'INGRESAR':
-                document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
-                break;
-            default:
-                document.getElementById("texto").innerHTML = 'TE EQUIVOCASTE DE FIESTA';
-                break;
+        var clave1 = document.getElementById('clave1').value;
+        var clave2 = document.getElementById('clave2').value;
+        var clave3 = document.getElementById('clave3').value;
+        var clave4 = document.getElementById('clave4').value;
+        var clave5 = document.getElementById('clave5').value;
+        if (clave1 == 'TIENES' && clave2 == 'QUE SER' && clave3 == 'INVITADO' && clave4 == 'PARA' && clave5 == 'INGRESAR' ) {
+            document.getElementById("texto").innerHTML = 'BIENVENIDO A LA FIESTA';
+        } else {
+            document.getElementById("texto").innerHTML = 'TE EQUIVOCASTE DE FIESTA';
         }
+
     }
 </script>
 
