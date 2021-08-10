@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EjercicioJS 13</title>
 </head>
+
 <body>
-    
+    <header>EjerciciosJS 13</header>
+    <p>
+        Escribir un algoritmo que calcule las raíces de una ecuación
+        cuadrática cuya forma canónica es: Ax**2 + By + C = 0
+        <br>
+        Solo se calcularán raíces reales. si el discriminante en menor de 0,
+        imprimir un mensaje que indique que existen dos raíces imaginarias. Los
+        coeficientes A,B,C serán ingresados.
+    </p>
+    <label>A:</label>
+    <input type="text" id="A">
+    <label>B:</label>
+    <input type="text" id="B">
+    <label>C:</label>
+    <input type="text" id="C">
+    <button type="button" onclick="raices();">Ok</button>
+    <div>
+        <p id="Total"></p>
+    </div>
 </body>
+<script>
+    function raices() {
+        var a = parseFloat(document.getElementById('A').value);
+        var b = parseFloat(document.getElementById('B').value);
+        var c = parseFloat(document.getElementById('C').value);
+        di = (b ** 2) - (4 * a * c);
+        if (di <= 0) {
+            document.getElementById('Total').innerHTML = 'error';
+        }
+        else {
+            var X = ((-b + (di ** 5)) / (2 * a));
+            var Y = ((-b + (di ** 5) / (2 * a)));
+            
+            document.getElementById('Total').innerHTML = X + ' , ' + Y;
+        }
+    }
+</script>
+
 </html>
