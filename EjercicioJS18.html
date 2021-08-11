@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS 18</title>
+</head>
+
+<body>
+    <header>Ejercicio 18</header>
+    <section>
+        Dadas N notas de un estudiante, escribir un algoritmo que calcule:
+        <ul>
+            <li> a) Cuántas notas tiene desaprobadas.</li>
+            <li> b) Cuántas aprobadas.</li>
+            <li> c) El promedio de notas.</li>
+            <li> d) El promedio de notas aprobadas y el de desaprobadas. </li>
+        </ul>
+        <div>
+            <form>
+                <label>Ingresa: </label>
+                <input type="text" id="nota" value=" ">
+                <button type="button" onclick="ingresa();">Ingresar</button>
+                <button type="button" onclick="calcular();">Calcular</button>
+            </form>
+        </div>
+        <div>
+            <p>Desaprobadas:</p>
+            <p id="Des"></p>
+            <p>Aprobadas:</p>
+            <p id="Apro"></p>
+            <p>Promedio de notas:</p>
+            <p id="Prom"></p>
+            <p>promedio de notas aprobadas:</p>
+            <p id="PromA"></p>
+            <p> y desaprobadas:</p>
+            <p id="PromD"></p>
+
+        </div>
+    </section>
+</body>
+<script>
+    window.onload = function () {
+        window.Not = [];
+        window.Desa = [];
+        window.Apro = [];
+    }
+
+    function ingresa() {
+        var nota = parseFloat(document.getElementById('nota').value);
+        if(nota>=11){
+            window.alert("No podes mas de 10")
+        }else{
+            Not.push(nota);
+        }
+    }
+    function calcular() {
+        var apro=0, des=0,j=0,k=0,m=0;
+        for (var i = 0; i < Not.length; i++) {
+                j=j+Not[i];
+                if (Not[i]<=5.9) {
+                    des = 1 + des;
+                    Desa.push(Not[i]);
+                }else{
+                    apro = 1 + apro;
+                    Apro.push(Not[i]);
+                }
+            }
+         document.getElementById('Apro').innerHTML = apro;
+         document.getElementById('Des').innerHTML = apro;
+         document.getElementById('Prom').innerHTML = j / Not.length ; 
+         for (var i = 0; i < Desa.length; i++) {
+                k = Desa[i] + k;
+            }
+        document.getElementById('PromD').innerHTML = k / Desa.length ; 
+        for (var i = 0; i < Apro.length; i++) {
+                m = Apro[i] + m;
+            }
+        document.getElementById('PromA').innerHTML = m / Apro.length ; 
+
+        }
+
+</script>
+
+</html>
