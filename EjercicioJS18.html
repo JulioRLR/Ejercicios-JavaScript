@@ -50,37 +50,37 @@
 
     function ingresa() {
         var nota = parseFloat(document.getElementById('nota').value);
-        if(nota>=11){
+        if (nota >= 11) {
             window.alert("No podes mas de 10")
-        }else{
+        } else {
             Not.push(nota);
         }
     }
     function calcular() {
-        var apro=0, des=0,j=0,k=0,m=0;
+        var apro = 0, des = 0, j = 0, k = 0, m = 0;
         for (var i = 0; i < Not.length; i++) {
-                j=j+Not[i];
-                if (Not[i]<=5.9) {
-                    des = 1 + des;
-                    Desa.push(Not[i]);
-                }else{
-                    apro = 1 + apro;
-                    Apro.push(Not[i]);
-                }
+            j = j + Not[i];
+            if (Not[i] <= 5.9) {
+                des = 1 + des;
+                Desa.push(Not[i]);
+            } else {
+                apro = 1 + apro;
+                Apro.push(Not[i]);
             }
-         document.getElementById('Apro').innerHTML = apro;
-         document.getElementById('Des').innerHTML = apro;
-         document.getElementById('Prom').innerHTML = j / Not.length ; 
-         for (var i = 0; i < Desa.length; i++) {
-                k = Desa[i] + k;
-            }
-        document.getElementById('PromD').innerHTML = k / Desa.length ; 
-        for (var i = 0; i < Apro.length; i++) {
-                m = Apro[i] + m;
-            }
-        document.getElementById('PromA').innerHTML = m / Apro.length ; 
-
         }
+        document.getElementById('Apro').innerHTML = apro;
+        document.getElementById('Des').innerHTML = apro;
+        document.getElementById('Prom').innerHTML = j / Not.length;
+        for (var i = 0; i < Desa.length; i++) {
+            k = Desa[i] + k;
+        }
+        document.getElementById('PromD').innerHTML = k / Desa.length;
+        for (var i = 0; i < Apro.length; i++) {
+            m = Apro[i] + m;
+        }
+        document.getElementById('PromA').innerHTML = m / Apro.length;
+
+    }
 
 </script>
 
