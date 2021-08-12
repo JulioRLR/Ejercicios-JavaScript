@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjerciciosJS 19</title>
+</head>
+
+<body>
+    <header>EjercicioJs 19</header>
+    <section>
+        Dado un número n, escribir un algoritmo que determine la suma de sus
+        dígitos.
+    </section>
+    <div>
+        <form>
+            <label>Numero: </label>
+            <input type="number" id="numero" value=" ">
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+        <div>
+            <p>Resultado:</p>
+            <p id="res"></p>
+        </div>
+    </div>
+</body>
+<script>
+    function calcular() {
+        var numero = document.getElementById('numero').value;
+        var suma=0;
+        for(var i=0;i<numero.length;i++)
+        {
+            suma= suma + parseInt(numero[i]);
+        }
+        document.getElementById("res").innerHTML= suma;
+        
+    }
+</script>
+
+</html>
