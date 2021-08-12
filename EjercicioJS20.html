@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjecicioJS 20</title>
+</head>
+
+<body>
+    <header>EjercicioJs 20</header>
+    <section>
+        Realizar un algoritmo que permita pedir 50 números naturales y
+        determine e imprima cuántos son pares, impares, positivos y negativos.
+    </section>
+    <div>
+        <form>
+            <label>Ingresa num: </label>
+            <input type="text" id="num" value=" ">
+            <button type="button" onclick="ingresa();">Ingresar</button>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p id="numeros"></p>
+        <p>Pares:</p>
+        <p id="par"></p>
+        <p>Impares:</p>
+        <p id="imp"></p>
+        <p>Positivo:</p>
+        <p id="pos"></p>
+        <p>Negativo:</p>
+        <p id="neg"></p>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        window.Numeros = [];
+    }
+    function ingresa() {
+        var num = parseFloat(document.getElementById('num').value);
+        Numeros.push(num);
+        var i=' ';
+        for (const x of Numeros) {
+            i = i +','+ x;
+        }
+        document.getElementById("numeros").innerHTML = i;
+    }
+    function calcular() {
+        var pa = 0, im = 0, po = 0, ne = 0, i = 0;
+
+        for (i = 0; i < Numeros.length; i++) {
+            if (Numeros[i] > 0) {
+                po = po + 1;
+
+            } else {
+                ne = ne + 1;
+            }
+            if (Numeros[i] % 2 == 0) {
+                pa = pa + 1;
+            }
+            else {
+                im = im + 1;
+            }
+
+        }
+        document.getElementById("par").innerHTML = pa;
+        document.getElementById("imp").innerHTML = im;
+        document.getElementById("pos").innerHTML = po;
+        document.getElementById("neg").innerHTML = ne;
+    }
+</script>
+
+</html>
