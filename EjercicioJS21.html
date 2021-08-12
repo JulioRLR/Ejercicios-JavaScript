@@ -27,6 +27,17 @@
     </div>
 </body>
 <script>
-    
+    function calcular() {
+        var num = parseInt(document.getElementById('num').value);
+        var j=' ';
+        let x =1;
+        for (var i = num; i > 1; i--) {
+            x *= i;
+
+            j = j +' '+ x;
+            
+        }
+        document.getElementById("fac").innerHTML = j;
+    }
 </script>
 </html>
