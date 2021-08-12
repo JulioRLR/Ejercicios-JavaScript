@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjerciciosJS22</title>
+</head>
+
+<body>
+    <header>EjercicioJs 22</header>
+    <section>
+        Escribir un algoritmo que calcule la media de 100 números dados e
+        imprima su resultado.
+    </section>
+    <div>
+        <form>
+            <label>Ingresa un numero: </label>
+            <input type="text" id="num" value=" ">
+            <button type="button" onclick="ingresa();">Ingresar</button>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p id="numeros"></p>
+        <p>media:</p>
+        <p id="media"></p>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        window.Numeros = [];
+    }
+    function ingresa() {
+        if (Numeros.length > 100) {
+            window.alert("ya son 100");
+        } else {
+            var num = parseFloat(document.getElementById('num').value);
+            Numeros.push(num);
+            var i = ' ';
+            for (const x of Numeros) {
+                i = i + ' ' + x;
+            }
+            document.getElementById("numeros").innerHTML = i;
+        }
+    }
+    function calcular() {
+        if (Numeros.length < 100) {
+            window.alert("Tienen que ser 100");
+        } else {
+            var k = 0;
+            for (i = 0; i < Numeros.length; i++) {
+                k = Numeros[i] + k;
+
+            }
+            document.getElementById("media").innerHTML = k / Numeros.length;
+        }
+    }
+</script>
+
+</html>
