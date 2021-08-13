@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjecicioJS 24</title>
+</head>
+
+<body>
+    <header>EjercicioJs 24</header>
+    <section>
+        Escribir un algoritmo que lea varios caracteres, uno a la vez, y que
+        se detenga cuando sea dada alguna de las vocales y la escriba.
+    </section>
+    <div>
+        <form>
+            <input type="text" id="letras">
+            <button type="button" onclick="calcular();">Calcular</button>
+
+        </form>
+    </div>
+    <div>
+        <p>letra: </p>
+        <p id="letr"></p>
+
+    </div>
+</body>
+<script>
+    function calcular() {
+        var o = 1;
+        var letras = document.getElementById('letras').value;
+        for (const letras2 of letras) {
+            if (letras2 == 'a' || letras2 == 'e' || letras2 == 'i' || letras2 == 'o' || letras2 == 'u') {
+                if (o == 1) {
+                    console.log(letras2);
+                    document.getElementById('letr').innerHTML = letras2;
+                    o=0;
+                }
+            }
+        }
+    }
+
+
+</script>
+
+</html>
