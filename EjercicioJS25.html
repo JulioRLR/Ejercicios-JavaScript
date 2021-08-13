@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjercicioJS25</title>
+</head>
+
+<body>
+    <header>EjercicioJs 25</header>
+    <section>
+        El ing. De sistemas de un banco de crédito necesita conocer de una
+        lista de 2500 cuentas cuál es la que posee mayor cantidad y cuál es la que
+        posee menor cantidad, de dinero. Escriba un algoritmo que realice lo
+        anterior, sin ordenar las cuentas.
+    </section>
+    <div>
+        <form>
+            <button type="button" onclick="calcular();">Calcular</button>
+
+        </form>
+    </div>
+    <div>
+        <p id="num"></p>
+        <p>mayor cantidad: </p>
+        <p id="ma"></p>
+        <p>menor cantidad: </p>
+        <p id="me"></p>
+    </div>
+</body>
+<script>
+    function calcular() {
+        var me=4501, ma=0;
+        for (let i = 0; i < 2500; i++) {
+            var x = Math.floor(Math.random() * 4500) + 1;
+            document.getElementById("num").innerHTML = x;
+            console.log(x);
+            if (x > ma) {
+                document.getElementById("ma").innerHTML = x;
+                ma=x;
+            } else if (x < me) {
+                document.getElementById("me").innerHTML = x;
+                me=x;
+            }
+        }
+    }
+</script>
+
+</html>
