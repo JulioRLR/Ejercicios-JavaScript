@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjecicioJS 23</title>
+</head>
+
+<body>
+    <header>EjercicioJs 23</header>
+    <section>
+        Escribir un algoritmo que calcule la suma y el producto de los
+        números pares comprendidos entre 20 y 400 incluyendo ambos
+    </section>
+    <div>
+        <form>
+            <button type="button" onclick="calcular();">Calcular</button>
+        </form>
+    </div>
+    <div>
+        <p>Suma: </p>
+        <p id="suma"></p>
+       
+    </div>
+</body>
+<script>
+    function calcular() {
+        var c=1,v=1;
+     
+        for (let i = 0; i <= 400 ; i++) {
+            if (i % 2 == 0) {
+                v = v*i;
+            }
+        }
+        for (let i = 0; i <= 400 ; i++) {
+            if (i % 2 == 0) {
+                c=c+i;
+            }
+        }
+
+        document.getElementById("suma").innerHTML = c+v;
+    }
+</script>
+
+</html>
