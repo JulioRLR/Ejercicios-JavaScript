@@ -21,7 +21,7 @@
             Tarifa:
             <input type="number" id="numero">
             <button type="button" onclick="guardar();">ingresar</button>
-            <button type="button" onclick="calcular();">calcular</button>
+
 
         </form>
     </div>
@@ -45,31 +45,32 @@
     window.onload = function () {
         window.numeros = [];
         window.num = '';
+        window.q =0;
+        window.w =0;
 
+    }
+    function ordenar(a, b) {
+        return (a - b);
     }
     function guardar() {
         var horas = parseInt(document.getElementById('numero').value);
-        var q = 0, w = 0;
-        num = num + horas;
-        document.getElementById('lis').innerHTML = numero;
+
+        numeros.push(horas);
+        
+        num = num +'.'+ horas;
+        document.getElementById('lis').innerHTML = num ;
+        if (horas % 2 == 0) {
+            q = q + 1;
+        } else {
+            w = 1 + w;
+        }
+        
+
         if (horas == 0) {
-            
+            document.getElementById('lista').innerHTML = numeros.sort(ordenar);
             document.getElementById('pares').innerHTML = q;
             document.getElementById('impares').innerHTML = w;
-        } else {
-            
-            if (horas % 2 == 0) {
-                q = q + 1;
-            } else {
-                w = 1 + w;
-            }
-            numeros.push(horas);
-            
         }
-
-
-
-
     }
 </script>
 
