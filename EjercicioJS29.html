@@ -45,8 +45,8 @@
     window.onload = function () {
         window.numeros = [];
         window.num = '';
-        window.q =0;
-        window.w =0;
+        window.q = 0;
+        window.w = 0;
 
     }
     function ordenar(a, b) {
@@ -55,21 +55,19 @@
     function guardar() {
         var horas = parseInt(document.getElementById('numero').value);
 
-        numeros.push(horas);
-        
-        num = num +'.'+ horas;
-        document.getElementById('lis').innerHTML = num ;
-        if (horas % 2 == 0) {
-            q = q + 1;
-        } else {
-            w = 1 + w;
-        }
-        
-
         if (horas == 0) {
             document.getElementById('lista').innerHTML = numeros.sort(ordenar);
             document.getElementById('pares').innerHTML = q;
             document.getElementById('impares').innerHTML = w;
+        } else {
+            numeros.push(horas);
+            num = num + horas + '.';
+            document.getElementById('lis').innerHTML = num;
+            if (horas % 2 == 0) {
+                q = q + 1;
+            } else {
+                w = 1 + w;
+            }
         }
     }
 </script>
