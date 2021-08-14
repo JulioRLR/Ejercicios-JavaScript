@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <script src="/porcentaje.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EjercicioJS 28</title>
 </head>
+
 <body>
     <header>EjercicioJs 28</header>
     <section>
         Escribir un algoritmo que clasifique a 50 personas según su edad y
         sexo, al final deberá escribir la cantidad de personas masculinas mayores
         de edad, la cantidad de personas femeninas menores de edad, cantidad de
-        personas   mayores   y   menores,   además   deberá   indicar   el   porcentaje   que
+        personas mayores y menores, además deberá indicar el porcentaje que
         representan las personas mayores y las menores, de edad.
     </section>
     <div>
         <form>
             Edad:
-            <input type="text" id="edad">
+            <input type="number" id="edad">
             Sexo:
             <button type="button" onclick="hombre();">Hombre</button>
             <button type="button" onclick="mujer();">Mujer</button>
+            <button type="button" onclick="calcular();">Calcular</button>
         </form>
     </div>
     <div>
@@ -43,8 +47,44 @@
     </div>
 </body>
 <script>
-   function hombre() {
-       
-   }
+    window.onload = function () {
+        window.MaMa = 0;
+        window.FeMe = 0;
+        window.PeMa = 0;
+        window.PeMe = 0;
+    }
+    function calcular() {
+        document.getElementById('M').innerHTML = MaMa;
+        document.getElementById('F').innerHTML = FeMe;
+        document.getElementById('Me').innerHTML = PeMe;
+        document.getElementById('Ma').innerHTML = PeMa;
+        var total = PeMe + PeMa;
+
+        //var h = (PeMe / 100) *total;
+        document.getElementById('Pme').innerHTML =porcentaje(PeMe,total);
+        document.getElementById('Pma').innerHTML = porcentaje(PeMa,total);
+
+
+    }
+    function hombre() {
+        var edad = document.getElementById('edad').value;
+        if (edad > 18) {
+            MaMa = MaMa + 1;
+            PeMa = PeMa + 1;
+        } else {
+            PeMe = PeMe + 1;
+        }
+    }
+    function mujer() {
+        var edad = document.getElementById('edad').value;
+        if (edad > 18) {
+            PeMa = PeMa + 1;
+        } else {
+            PeMe = PeMe + 1;
+            FeMe = FeMe + 1;
+        }
+    }
+
 </script>
+
 </html>
